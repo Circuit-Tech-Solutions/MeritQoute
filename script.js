@@ -3,6 +3,7 @@ function calculateCost() {
     const bedrooms = parseInt(document.getElementById('bedrooms').value);
     const flights = parseInt(document.getElementById('flights').value);
     const movers = parseInt(document.getElementById('movers').value);
+    const truckNeeded = document.getElementById('truck').checked;
     
     // Calculate time based on bedrooms
     let time = 0;
@@ -29,13 +30,22 @@ function calculateCost() {
         time += parseInt(item.value) / 60; // Convert minutes to hours
     });
 
-    // Calculate cost based on movers
+    // Calculate cost based on movers and whether a truck is needed
     let hourlyRate = 0;
-    switch(movers) {
-        case 2: hourlyRate = 90; break;
-        case 3: hourlyRate = 135; break;
-        case 4: hourlyRate = 180; break;
-        case 5: hourlyRate = 225; break;
+    if (truckNeeded) {
+        switch(movers) {
+            case 2: hourlyRate = 165; break;
+            case 3: hourlyRate = 205; break;
+            case 4: hourlyRate = 245; break;
+            case 5: hourlyRate = 245; break;
+        }
+    } else {
+        switch(movers) {
+            case 2: hourlyRate = 90; break;
+            case 3: hourlyRate = 135; break;
+            case 4: hourlyRate = 180; break;
+            case 5: hourlyRate = 225; break;
+        }
     }
     const totalCost = time * hourlyRate;
 

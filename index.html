@@ -4,54 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moving Cost Calculator</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        label { display: block; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Moving Cost Calculator</h1>
-    <form id="movingForm">
-        <label for="bedrooms">Number of Bedrooms:</label>
-        <select id="bedrooms" name="bedrooms">
-            <option value="1">1 Bedroom</option>
-            <option value="2">2 Bedrooms</option>
-            <option value="3">3 Bedrooms</option>
-            <option value="4">4 Bedrooms</option>
-            <option value="5">5 Bedrooms</option>
-        </select>
+    <div class="container">
+        <h1 class="mt-5">Moving Cost Calculator</h1>
+        <form id="movingForm" class="mt-4">
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <select id="bedrooms" name="bedrooms" class="form-control">
+                    <option value="1">1 Bedroom</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4">4 Bedrooms</option>
+                    <option value="5">5 Bedrooms</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="flights">Number of Flights of Stairs:</label>
+                <select id="flights" name="flights" class="form-control">
+                    <option value="1">1 Flight</option>
+                    <option value="2">2 Flights</option>
+                    <option value="3">3 Flights</option>
+                    <option value="4">4 Flights</option>
+                    <option value="5">5+ Flights</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="specialtyItems">Specialty Items:</label>
+                <div class="form-check">
+                    <input type="checkbox" id="appliances" name="specialtyItems" value="30" class="form-check-input">
+                    <label class="form-check-label" for="appliances">Appliances</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="workoutEquipment" name="specialtyItems" value="30" class="form-check-input">
+                    <label class="form-check-label" for="workoutEquipment">Workout Equipment</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="safe" name="specialtyItems" value="30" class="form-check-input">
+                    <label class="form-check-label" for="safe">Safe</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="piano" name="specialtyItems" value="30" class="form-check-input">
+                    <label class="form-check-label" for="piano">Piano</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="other" name="specialtyItems" value="60" class="form-check-input">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="truck">Do you need a truck?</label>
+                <div class="form-check">
+                    <input type="checkbox" id="truck" name="truck" class="form-check-input">
+                    <label class="form-check-label" for="truck">Yes</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="movers">Number of Movers:</label>
+                <select id="movers" name="movers" class="form-control">
+                    <option value="2">2 Movers</option>
+                    <option value="3">3 Movers</option>
+                    <option value="4">4 Movers</option>
+                    <option value="5">5 Movers</option>
+                </select>
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="calculateCost()">Calculate</button>
+        </form>
         
-        <label for="flights">Number of Flights of Stairs:</label>
-        <select id="flights" name="flights">
-            <option value="1">1 Flight</option>
-            <option value="2">2 Flights</option>
-            <option value="3">3 Flights</option>
-            <option value="4">4 Flights</option>
-            <option value="5">5+ Flights</option>
-        </select>
-        
-        <label for="specialtyItems">Specialty Items:</label>
-        <input type="checkbox" id="appliances" name="specialtyItems" value="30"> Appliances<br>
-        <input type="checkbox" id="workoutEquipment" name="specialtyItems" value="30"> Workout Equipment<br>
-        <input type="checkbox" id="safe" name="specialtyItems" value="30"> Safe<br>
-        <input type="checkbox" id="piano" name="specialtyItems" value="30"> Piano<br>
-        <input type="checkbox" id="other" name="specialtyItems" value="60"> Other<br>
-        
-        <label for="movers">Number of Movers:</label>
-        <select id="movers" name="movers">
-            <option value="2">$90 per Hour (2 Movers)</option>
-            <option value="3">$135 per Hour (3 Movers)</option>
-            <option value="4">$180 per Hour (4 Movers)</option>
-            <option value="5">$225 per Hour (5 Movers)</option>
-        </select>
-        
-        <button type="button" onclick="calculateCost()">Calculate</button>
-    </form>
-    
-    <h2>Results</h2>
-    <p id="totalTime"></p>
-    <p id="totalCost"></p>
-    <p id="protectionPrice"></p>
+        <h2 class="mt-4">Results</h2>
+        <p id="totalTime"></p>
+        <p id="totalCost"></p>
+        <p id="protectionPrice"></p>
+    </div>
     
     <script src="script.js"></script>
 </body>
