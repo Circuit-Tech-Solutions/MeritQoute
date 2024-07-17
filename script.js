@@ -19,7 +19,7 @@ function calculateCost() {
     if (flights === 0) {
         time += 0; // No added time for 0 flights
     } else if (flights === 1) {
-        time += 0.33; // 20 minutes for 1 flight (1/3 of an hour)
+        time += 0.25; // 20 minutes for 1 flight (1/3 of an hour)
     } else if (flights === 2) {
         time += 0.5; // 30 minutes for 2 flights
     } else if (flights === 3) {
