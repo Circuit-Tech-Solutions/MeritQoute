@@ -16,13 +16,19 @@ function calculateCost() {
     }
 
     // Calculate time based on flights of stairs
-    if (flights <= 2) {
-        time += flights * 0.5; // 30 minutes per flight for 1-2 flights
-    } else if (flights <= 4) {
-        time += flights; // 1 hour per flight for 3-4 flights
+    if (flights === 0) {
+        time += 0; // No added time for 0 flights
+    } else if (flights === 1) {
+        time += 0.33; // 20 minutes for 1 flight (1/3 of an hour)
+    } else if (flights === 2) {
+        time += 0.5; // 30 minutes for 2 flights
+    } else if (flights === 3) {
+        time += 0.75; // 45 minutes for 3 flights
+    } else if (flights === 4) {
+        time += 1; // 60 minutes for 4 flights
     } else {
-        time += 1.5; // 1.5 hours for 5+ flights
-    }
+        time += 1.25; // 75 minutes for 5 flights
+    } 
 
     // Calculate time based on specialty items
     const specialtyItems = document.querySelectorAll('input[name="specialtyItems"]:checked');
