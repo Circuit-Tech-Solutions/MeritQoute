@@ -40,17 +40,17 @@ function calculateCost() {
     let hourlyRate = 0;
     if (truckNeeded) {
         switch(movers) {
-            case 2: hourlyRate = 165; break;
-            case 3: hourlyRate = 205; break;
-            case 4: hourlyRate = 245; break;
-            case 5: hourlyRate = 245; break;
+            case 2: hourlyRate = 175; break;
+            case 3: hourlyRate = 225; break;
+            case 4: hourlyRate = 275; break;
+            case 5: hourlyRate = 275; break;
         }
     } else {
         switch(movers) {
-            case 2: hourlyRate = 90; break;
-            case 3: hourlyRate = 135; break;
-            case 4: hourlyRate = 180; break;
-            case 5: hourlyRate = 225; break;
+            case 2: hourlyRate = 100; break;
+            case 3: hourlyRate = 150; break;
+            case 4: hourlyRate = 200; break;
+            case 5: hourlyRate = 250; break;
         }
     }
     const totalCost = time * hourlyRate;
